@@ -223,11 +223,12 @@ footer {
     line-height: 1.6;
     }
 
-/* --- STYLE DU CARROUSEL HORIZONTAL --- */
+/* --- STYLE DU CARROUSEL SUR LA PAGE BLANCHE --- */
 .services-carousel-container {
     max-width: 900px;
     width: 100%;
-    margin: 25px auto 0 auto;
+    margin: 30px auto;
+    padding: 0 15px;
     overflow: hidden;
 }
 
@@ -237,6 +238,54 @@ footer {
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #c5a059 transparent;
+}
+
+.services-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.services-carousel::-webkit-scrollbar-thumb {
+    background: #c5a059;
+    border-radius: 10px;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.service-card svg {
+    stroke: #c5a059;
+    flex-shrink: 0;
+    transition: stroke 0.3s ease;
+}
+
+.service-card:hover {
+    background: #1a252c;
+    color: white;
+    border-color: #1a252c;
+    transform: translateY(-2px);
+}
+
+.service-card:hover svg {
+    stroke: white;
+}
+
     /* Masquer la barre de défilement tout en gardant le scroll tactile/souris */
     scrollbar-width: thin;
     scrollbar-color: #c5a059 transparent;
