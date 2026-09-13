@@ -107,7 +107,7 @@ header nav a:hover {
 
 /* --- STYLES DE LA MODALE UNIQUE --- */
 .modal-overlay {
-    display: none; /* Caché par défaut */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -221,19 +221,19 @@ footer {
     margin-top: 4rem;
     font-size: 0.9rem;
     line-height: 1.6;
-    }
+}
 
 /* --- STYLE DU CARROUSEL HORIZONTAL SUR PAGE BLANCHE --- */
 .services-carousel-container {
     max-width: 900px;
     width: 100%;
-    margin: 30px auto; /* Centre le conteneur sur la page blanche */
+    margin: 30px auto;
     padding: 0 15px;
 }
 
 .services-carousel {
     display: flex;
-    justify-content: center; /* Centre les éléments si l'écran est large, ou permet le scroll sur petit écran */
+    justify-content: center;
     gap: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -244,7 +244,7 @@ footer {
 
 @media (max-width: 800px) {
     .services-carousel {
-        justify-content: flex-start; /* Aligne au début pour permettre le défilement tactile sur mobile */
+        justify-content: flex-start;
     }
 }
 
@@ -264,7 +264,7 @@ footer {
     gap: 8px;
     background: #ffffff;
     border: 1px solid #e0e0e0;
-    color: #000000; /* Texte en noir */
+    color: #000000; /* Texte en noir par défaut */
     padding: 12px 22px;
     border-radius: 30px;
     font-weight: 600;
@@ -276,53 +276,18 @@ footer {
 }
 
 .service-card svg {
-    stroke: #1a252c; /* Couleur de l'icône */
+    stroke: #000000; /* Icône en noir par défaut */
     flex-shrink: 0;
+    transition: stroke 0.3s ease;
 }
 
 .service-card:hover {
     background: #1a252c;
-    color: #ffffff; /* Texte devient blanc au survol */
+    color: #ffffff; /* Le texte devient blanc au survol */
     border-color: #1a252c;
     transform: translateY(-2px);
 }
 
 .service-card:hover svg {
     stroke: #ffffff; /* L'icône devient blanche au survol */
-    }
-
-    /* Masquer la barre de défilement tout en gardant le scroll tactile/souris */
-    scrollbar-width: thin;
-    scrollbar-color: #c5a059 transparent;
-}
-
-.services-carousel::-webkit-scrollbar {
-    height: 6px;
-}
-
-.services-carousel::-webkit-scrollbar-thumb {
-    background: #c5a059;
-    border-radius: 10px;
-}
-
-.service-card {
-    flex: 0 0 auto;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.service-card:hover {
-    background: #c5a059;
-    border-color: #c5a059;
-    transform: translateY(-2px);
     }
