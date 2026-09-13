@@ -368,3 +368,21 @@ footer {
         font-size: 0.85rem;
     }
 }
+/* Centrage et alignement du moteur de recherche sur mobile */
+@media screen and (max-width: 768px) {
+    .booking-engine {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centre les éléments horizontalement */
+        width: 90%;          /* S'adapte à la largeur de l'écran avec une marge */
+        margin: 0 auto;      /* Centre le bloc entier dans la page */
+    }
+
+    .input-group {
+        width: 100%;         /* Chaque case prend toute la largeur disponible du bloc */
+    }
+
+    .booking-engine button {
+        width: 100%;         /* Le bouton prend également toute la largeur pour s'aligner parfaitement */
+    }
+    }
