@@ -1,4 +1,4 @@
-// Les différentes catégories de chambres/suites de VOTRE hôtel
+// Données des chambres de l'hôtel
 const rooms = [
     { 
         id: 1, 
@@ -26,10 +26,17 @@ const rooms = [
     }
 ];
 
-// Afficher les chambres sur la page
-function afficherChambres(liste) {
+// Fonction pour injecter les chambres dans la modale unique
+function afficherChambresDansModal(liste, sousTitreTexte) {
     const container = document.getElementById('room-list');
+    const subtitle = document.getElementById('modal-subtitle');
     container.innerHTML = '';
+    subtitle.textContent = sousTitreTexte;
+
+    if (liste.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align:center; color:#d9534f;">Aucune chambre ne correspond à vos critères de nombre d\'invités.</p>';
+        return;
+    }
 
     liste.forEach(room => {
         const card = document.createElement('div');
@@ -40,18 +47,29 @@ function afficherChambres(liste) {
                 <h3>${room.nom}</h3>
                 <p class="desc">${room.description}</p>
                 <p class="price">${room.prix} € <span style="font-size:0.8rem; color:#666;">/ nuit</span></p>
-                <button onclick="reserverChambre(${room.id})">Réserver cette chambre</button>
+                <button onclick="reserverChambre(${room.id})">Sélectionner</button>
             </div>
         `;
         container.appendChild(card);
     });
 }
 
-// Bouton de vérification de disponibilité (filtre par capacité d'invités)
-function filtrerChambres() {
-    const guests = parseInt(document.getElementById('guests').value);
+// Ouvrir la modale avec toutes les chambres par défaut
+function ouvrirModal() {
+    afficherChambresDansModal(rooms, "Voici l'ensemble de nos hébergements disponibles.");
+    document.getElementById('modal-chambres').style.display = 'flex';
+}
+
+// Fermer la modale
+function fermerModal() {
+    document.getElementById('modal-chambres').style.display = 'none';
+}
+
+// Vérifier les dates/voyageurs saisis sur la page d'accueil et ouvrir la modale filtrée
+function verifierEtOuvrirChambres() {
     const checkin = document.getElementById('checkin').value;
     const checkout = document.getElementById('checkout').value;
+    const guests = parseInt(document.getElementById('guests').value);
 
     if (!checkin || !checkout) {
         alert("Veuillez sélectionner vos dates d'arrivée et de départ.");
@@ -63,28 +81,24 @@ function filtrerChambres() {
         return;
     }
 
-    // Filtrer les chambres qui peuvent accueillir le nombre de personnes
+    // Filtrer selon la capacité d'accueil
     const disponibles = rooms.filter(r => r.capacite >= guests);
-    afficherChambres(disponibles);
     
-    // Scroll fluide vers la liste
-    document.getElementById('chambres').scrollIntoView({ behavior: 'smooth' });
+    // Ouvrir la modale unique avec les résultats filtrés
+    afficherChambresDansModal(disponibles, `Séjour du ${checkin} au ${checkout} pour ${guests} voyageur(s)`);
+    document.getElementById('modal-chambres').style.display = 'flex';
 }
 
-// Processus de réservation
+// Simulation de réservation d'une chambre spécifique depuis la modale
 function reserverChambre(id) {
     const room = rooms.find(r => r.id === id);
-    const checkin = document.getElementById('checkin').value || "Non spécifiée";
-    const checkout = document.getElementById('checkout').value || "Non spécifiée";
+    const checkin = document.getElementById('checkin').value || "Dates libres";
+    const checkout = document.getElementById('checkout').value || "Dates libres";
     
-    const confirmation = confirm(`Confirmer la réservation pour :\n- Chambre : ${room.nom}\n- Du : ${checkin} au ${checkout}\n- Tarif : ${room.prix} €/nuit\n\nCliquez sur OK pour valider.`);
+    const confirmation = confirm(`Confirmer la réservation :\n\n- Type : ${room.nom}\n- Période : ${checkin} au ${checkout}\n- Tarif : ${room.prix} € / nuit\n\nCliquez sur OK pour valider.`);
     
     if (confirmation) {
-        alert("🎉 Merci ! Votre réservation est enregistrée. Un e-mail de confirmation vient de vous être simulé.");
+        alert("🎉 Félicitations ! Votre réservation dans notre hôtel a bien été enregistrée.");
+        fermerModal();
     }
 }
-
-// Chargement initial de toutes les chambres
-window.onload = () => {
-    afficherChambres(rooms);
-};
