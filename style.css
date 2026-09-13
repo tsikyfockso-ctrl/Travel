@@ -282,9 +282,9 @@ footer {
 }
 
 .service-card:hover {
-    background: #1a252c;
+    background: #c5a059;
     color: #ffffff; /* Le texte devient blanc au survol */
-    border-color: #1a252c;
+    border-color: #c5a059;
     transform: translateY(-2px);
 }
 
