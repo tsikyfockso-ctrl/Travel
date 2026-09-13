@@ -223,23 +223,29 @@ footer {
     line-height: 1.6;
     }
 
-/* --- STYLE DU CARROUSEL SUR LA PAGE BLANCHE --- */
+/* --- STYLE DU CARROUSEL HORIZONTAL SUR PAGE BLANCHE --- */
 .services-carousel-container {
     max-width: 900px;
     width: 100%;
-    margin: 30px auto;
+    margin: 30px auto; /* Centre le conteneur sur la page blanche */
     padding: 0 15px;
-    overflow: hidden;
 }
 
 .services-carousel {
     display: flex;
+    justify-content: center; /* Centre les éléments si l'écran est large, ou permet le scroll sur petit écran */
     gap: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-bottom: 10px;
     scrollbar-width: thin;
     scrollbar-color: #c5a059 transparent;
+}
+
+@media (max-width: 800px) {
+    .services-carousel {
+        justify-content: flex-start; /* Aligne au début pour permettre le défilement tactile sur mobile */
+    }
 }
 
 .services-carousel::-webkit-scrollbar {
@@ -252,13 +258,13 @@ footer {
 }
 
 .service-card {
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     gap: 8px;
-    flex: 0 0 auto;
     background: #ffffff;
     border: 1px solid #e0e0e0;
-    color: #333;
+    color: #000000; /* Texte en noir */
     padding: 12px 22px;
     border-radius: 30px;
     font-weight: 600;
@@ -266,25 +272,24 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .service-card svg {
-    stroke: #c5a059;
+    stroke: #1a252c; /* Couleur de l'icône */
     flex-shrink: 0;
-    transition: stroke 0.3s ease;
 }
 
 .service-card:hover {
     background: #1a252c;
-    color: white;
+    color: #ffffff; /* Texte devient blanc au survol */
     border-color: #1a252c;
     transform: translateY(-2px);
 }
 
 .service-card:hover svg {
-    stroke: white;
-}
+    stroke: #ffffff; /* L'icône devient blanche au survol */
+    }
 
     /* Masquer la barre de défilement tout en gardant le scroll tactile/souris */
     scrollbar-width: thin;
