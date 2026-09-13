@@ -6,12 +6,12 @@
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
     color: #333;
 }
 
 header {
-    background-color: #003580;
+    background-color: #1a252c;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@ header {
 }
 
 header .logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
@@ -28,136 +28,156 @@ header nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .hero {
-    background: linear-gradient(rgba(0,53,128,0.8), rgba(0,53,128,0.8)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 5rem 1rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
 }
 
 .hero p {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
 }
 
-.search-bar {
-    background: #ffb700;
-    padding: 8px;
-    display: inline-flex;
-    gap: 5px;
-    border-radius: 6px;
-    max-width: 800px;
-    width: 100%;
-}
-
-.search-bar input, .search-bar button {
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.search-bar input {
-    flex: 1;
+.booking-engine {
     background: white;
+    padding: 20px;
+    display: inline-flex;
+    gap: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 900px;
+    width: 100%;
+    align-items: flex-end;
+    color: #333;
 }
 
-.search-bar button {
-    background-color: #0071c2;
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input, .input-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.booking-engine button {
+    background-color: #c5a059;
     color: white;
     font-weight: bold;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
 }
 
-.search-bar button:hover {
-    background-color: #005999;
+.booking-engine button:hover {
+    background-color: #b08d48;
 }
 
 .container {
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     padding: 0 1rem;
 }
 
 .container h2 {
-    margin-bottom: 1.5rem;
-    color: #222;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1a252c;
+    text-align: center;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 220px;
     object-fit: cover;
 }
 
 .card-content {
-    padding: 15px;
+    padding: 20px;
 }
 
 .card-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #1a252c;
 }
 
-.card-content .city {
+.card-content .desc {
     color: #666;
     font-size: 0.9rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 .card-content .price {
     font-weight: bold;
-    color: #003580;
-    font-size: 1.1rem;
+    color: #c5a059;
+    font-size: 1.2rem;
     margin-bottom: 15px;
 }
 
 .card-content button {
     width: 100%;
-    background-color: #0071c2;
+    background-color: #1a252c;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.2s;
 }
 
 .card-content button:hover {
-    background-color: #005999;
+    background-color: #33444f;
 }
 
 footer {
     text-align: center;
-    padding: 2rem;
-    background-color: #003580;
+    padding: 2.5rem;
+    background-color: #1a252c;
     color: white;
-    margin-top: 3rem;
-}
+    margin-top: 4rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    }
