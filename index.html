@@ -12,7 +12,7 @@
     <header>
         <div class="logo">🏨 Hôtel Nom ici</div>
         <nav>
-            <a href="#chambres">Nos Chambres</a>
+            <a href="#" onclick="ouvrirModal(); return false;">Nos Chambres</a>
             <a href="#presentation">L'Hôtel</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -41,24 +41,30 @@
                     <option value="4">4 Personnes (Famille)</option>
                 </select>
             </div>
-            <button onclick="filtrerChambres()">Vérifier la disponibilité</button>
+            <button onclick="verifierEtOuvrirChambres()">Vérifier la disponibilité</button>
         </div>
     </section>
 
-    <!-- Liste des Chambres de l'Hôtel -->
-    <main class="container" id="chambres">
-        <h2>Nos Chambres & Suites</h2>
-        <div id="room-list" class="grid">
-            <!-- Injecté dynamiquement par JavaScript -->
+    <!-- LA MODALE UNIQUE QUI CONTIENT TOUTES LES CHAMBRES -->
+    <div id="modal-chambres" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fermerModal()">&times;</span>
+            <h2>Nos Chambres & Suites</h2>
+            <p id="modal-subtitle" style="text-align:center; color:#666; margin-bottom:20px;"></p>
+            
+            <!-- La grille qui va regrouper les cartes des chambres dynamiquement -->
+            <div id="room-list" class="grid">
+                <!-- Injecté par JavaScript -->
+            </div>
         </div>
-    </main>
+    </div>
 
     <!-- Pied de page -->
     <footer>
         <p>&copy; 2026 Hôtel Nom ici - Tous droits réservés.</p>
-        <p>Adresse : Ici | 📞 Tél :+32 488 09 13 49</p>
+        <p>Adresse : Ici | 📞 Tél : +32 488 09 13 49</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
