@@ -222,3 +222,53 @@ footer {
     font-size: 0.9rem;
     line-height: 1.6;
     }
+
+/* --- STYLE DU CARROUSEL HORIZONTAL --- */
+.services-carousel-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 25px auto 0 auto;
+    overflow: hidden;
+}
+
+.services-carousel {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    /* Masquer la barre de défilement tout en gardant le scroll tactile/souris */
+    scrollbar-width: thin;
+    scrollbar-color: #c5a059 transparent;
+}
+
+.services-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.services-carousel::-webkit-scrollbar-thumb {
+    background: #c5a059;
+    border-radius: 10px;
+}
+
+.service-card {
+    flex: 0 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+    background: #c5a059;
+    border-color: #c5a059;
+    transform: translateY(-2px);
+    }
