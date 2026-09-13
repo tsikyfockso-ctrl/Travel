@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonVoyage - Réservation d'hébergements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="logo">MonVoyage.com</div>
+        <nav>
+            <a href="#">Hébergements</a>
+            <a href="#">Vols</a>
+            <a href="#">Connexion</a>
+        </nav>
+    </header>
+
+    <!-- Section de Recherche -->
+    <section class="hero">
+        <h1>Trouvez votre prochain séjour</h1>
+        <p>Recherchez des offres d'hôtels, cabanes, et bien plus encore.</p>
+        <div class="search-bar">
+            <input type="text" id="destination" placeholder="Où allez-vous ? (ex: Paris, Nice)">
+            <input type="date" id="date-in">
+            <input type="date" id="date-out">
+            <button onclick="rechercherHotels()">Rechercher</button>
+        </div>
+    </section>
+
+    <!-- Liste des Résultats -->
+    <main class="container">
+        <h2>Hébergements à la une</h2>
+        <div id="hotel-list" class="grid">
+            <!-- Les hôtels seront injectés dynamiquement ici par JavaScript -->
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2026 MonVoyage.com - Tous droits réservés.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
