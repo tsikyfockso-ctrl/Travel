@@ -3,46 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonVoyage - Réservation d'hébergements</title>
+    <title>Hôtel Le Paradis - Réservation en Ligne</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- En-tête -->
     <header>
-        <div class="logo">MonVoyage.com</div>
+        <div class="logo">🏨 Hôtel Le Paradis</div>
         <nav>
-            <a href="#">Hébergements</a>
-            <a href="#">Vols</a>
-            <a href="#">Connexion</a>
+            <a href="#chambres">Nos Chambres</a>
+            <a href="#presentation">L'Hôtel</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Section de Recherche -->
+    <!-- Section d'Accueil / Réservation Rapide -->
     <section class="hero">
-        <h1>Trouvez votre prochain séjour</h1>
-        <p>Recherchez des offres d'hôtels, cabanes, et bien plus encore.</p>
-        <div class="search-bar">
-            <input type="text" id="destination" placeholder="Où allez-vous ? (ex: Paris, Nice)">
-            <input type="date" id="date-in">
-            <input type="date" id="date-out">
-            <button onclick="rechercherHotels()">Rechercher</button>
+        <h1>Réservez votre séjour de rêve</h1>
+        <p>Profitez des meilleurs tarifs garantis en réservant directement chez nous.</p>
+        
+        <div class="booking-engine">
+            <div class="input-group">
+                <label>Arrivée</label>
+                <input type="date" id="checkin">
+            </div>
+            <div class="input-group">
+                <label>Départ</label>
+                <input type="date" id="checkout">
+            </div>
+            <div class="input-group">
+                <label>Voyageurs</label>
+                <select id="guests">
+                    <option value="1">1 Adulte</option>
+                    <option value="2" selected>2 Adultes</option>
+                    <option value="3">3 Adultes</option>
+                    <option value="4">4 Personnes (Famille)</option>
+                </select>
+            </div>
+            <button onclick="filtrerChambres()">Vérifier la disponibilité</button>
         </div>
     </section>
 
-    <!-- Liste des Résultats -->
-    <main class="container">
-        <h2>Hébergements à la une</h2>
-        <div id="hotel-list" class="grid">
-            <!-- Les hôtels seront injectés dynamiquement ici par JavaScript -->
+    <!-- Liste des Chambres de l'Hôtel -->
+    <main class="container" id="chambres">
+        <h2>Nos Chambres & Suites</h2>
+        <div id="room-list" class="grid">
+            <!-- Injecté dynamiquement par JavaScript -->
         </div>
     </main>
 
     <!-- Pied de page -->
     <footer>
-        <p>&copy; 2026 MonVoyage.com - Tous droits réservés.</p>
+        <p>&copy; 2026 Hôtel Le Paradis - Tous droits réservés.</p>
+        <p>📍 Adresse : 12 Avenue de la Plage, 75000 Paris | 📞 Tél : +33 1 23 45 67 89</p>
     </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
